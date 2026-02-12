@@ -2,20 +2,29 @@ import { ArrowUpRight, Github } from "lucide-react";
 import { AnimatedBorderButton } from "@/components/AnimatedBorderButton";
 const projects = [
     {
+        title: "World Fire Safety System",
+        description:
+            "A comprehensive fire safety web application showcasing products and services with interactive sections, responsive design, and informative visuals.",
+        image: "/projects/world-fire-safety.png",
+        tags: ["React", "HTML", "CSS", "JavaScript", "Spring Boot"],
+        link: "https://www.worldfiresafety.com/",
+        github: "https://github.com/rishikeshsalunke/world-fire-safety",
+    },
+    {
         title: "Restaurant Website",
         description:
             "A modern restaurant website with interactive menu sections, responsive layout, and smooth navigation built using HTML, CSS, and JavaScript.",
         image: "/projects/restaurant.png",
-        tags: ["Java", "JSP", "Servlet", "HTML", "CSS", "JavaScript"],
+        tags: ["HTML", "CSS", "JavaScript"],
         link: "https://sagerestaurant.netlify.app/",
         github: "https://github.com/YOUR_GITHUB_USERNAME/restaurant-website",
     },
-     {
+    {
         title: "Live Weather Application",
         description:
             "A responsive weather application that fetches real-time data using public APIs. Users can search cities and view current weather conditions with a clean UI.",
         image: "/projects/weather.png",
-        tags: ["HTML", "CSS", "JavaScript", "API"],
+        tags: ["Java", "JSP", "HTML", "CSS", "Servlet", "JavaScript", "API"],
         link: "https://weather-app-3ge9.onrender.com/", // your live link
         github: "https://github.com/YOUR_GITHUB_USERNAME/weather-app",
     },
@@ -76,39 +85,50 @@ export const Projects = () => {
                             style={{ animationDelay: `${(idx + 1) * 100}ms` }}
                         >
                             {/* Image */}
-                            <div className="relative overflow-hidden aspect-video">
+                            <div className="relative overflow-hidden group w-full">
                                 <img
                                     src={project.image}
                                     alt={project.title}
-                                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                                    className="w-full h-auto max-h-75 md:max-h-100 object-contain transition-transform duration-700 group-hover:scale-105"
                                 />
+
                                 <div
-                                    className="absolute inset-0 
-                                bg-linear-to-t from-card via-card/50
-                                to-transparent opacity-60"
+                                    className="absolute inset-0 bg-linear-to-t from-card via-card/50 to-transparent opacity-60"
                                 />
 
                                 {/* Overlay Links */}
                                 <div className="absolute inset-0 flex items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                    <a href={project.link} className="p-3 rounded-full glass hover:bg-primary hover:text-primary-foreground transition-all">
+                                    <a
+                                        href={project.link}
+                                        className="p-3 rounded-full glass hover:bg-primary hover:text-primary-foreground transition-all"
+                                    >
                                         <ArrowUpRight className="w-5 h-5" />
                                     </a>
-                                    <a href={project.github} className="p-3 rounded-full glass hover:bg-primary hover:text-primary-foreground transition-all">
+                                    <a
+                                        href={project.github}
+                                        className="p-3 rounded-full glass hover:bg-primary hover:text-primary-foreground transition-all"
+                                    >
                                         <Github className="w-5 h-5" />
                                     </a>
                                 </div>
                             </div>
 
+
+
                             {/* Content */}
                             <div className="p-6 space-y-4">
                                 <div className="flex items-start justify-between">
                                     <h3 className="text-xl font-semibold group-hover:text-primary transition-colors">{project.title}</h3>
-                                    <ArrowUpRight
-                                        className="w-5 h-5 
-                                     text-muted-foreground group-hover:text-primary
-                                        group-hover:translate-x-1 
-                                        group-hover:-translate-y-1 transition-all"
-                                    />
+                                    <a
+                                        href={project.link}>
+                                        <ArrowUpRight
+
+                                            className="w-5 h-5 
+                                        text-muted-foreground group-hover:text-primary
+                                            group-hover:translate-x-1 
+                                            group-hover:-translate-y-1 transition-all"
+                                        />
+                                    </a>
                                 </div>
 
                                 <p className="text-muted-foreground text-sm">
