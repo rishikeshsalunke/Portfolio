@@ -4,7 +4,7 @@ export function Blogs() {
   const [blogs, setBlogs] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/api/blogs")
+    fetch("https://portfolio-j78o.onrender.com/api/blogs")
       .then(res => res.json())
       .then(data => setBlogs(data))
       .catch(err => console.error("Error fetching blogs:", err));
