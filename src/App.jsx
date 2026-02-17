@@ -5,7 +5,7 @@ import { Journey } from "@/sections/Journey";
 import { Contact } from "@/sections/Contact";
 import { Navbar } from "@/layout/Navbar";
 import { Footer } from "./layout/Footer";
-import { Blogs } from "@/sections/Blogs";
+// import { Blogs } from "@/sections/Blogs";
 
 
 function App() {
@@ -18,7 +18,7 @@ function App() {
         <About />
         <Projects />
         <Journey />
-        <Blogs />
+        {/* <Blogs /> */}
         <Contact />
       </main>
       <Footer />
